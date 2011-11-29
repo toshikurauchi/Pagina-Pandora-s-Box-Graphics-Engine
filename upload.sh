@@ -1,1 +1,1 @@
-cp -r site/ ~/www/
+'cp' -r site/* ~/www/
