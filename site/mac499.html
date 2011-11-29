@@ -15,10 +15,11 @@
 	        <div id="menu">
                 <ul>
                 	<li><a style="cursor:pointer" id="monografia">Monografia</a></li>
-                	<li><a>Apresenta&ccedil;&atilde;o</a></li>
+                	<li><a style="cursor:pointer" id="apresentacao">Apresenta&ccedil;&atilde;o</a></li>
                 	<li><a href="https://github.com/victorkendy/PandoraBox">C&oacute;digo</a></li>
                 	<li><a style="cursor:pointer" id="videos">V&iacute;deos</a></li>
                     <li><a style="cursor:pointer" id="proposta">Proposta de monografia</a></li>
+                    <li><a href="https://github.com/toshikurauchi/Pagina-Pandora-s-Box-Graphics-Engine">Fonte da página</a></li>
                 </ul>
 	        </div>
 	        <div id="gallery"><img src="css/images/diff-tensro_RTRT1.jpg" width="346" height="340" alt="" /><img src="css/images/MRI-DTIBrain-9223.jpg" width="346" height="340" alt="" /></div>
@@ -30,10 +31,14 @@
      			<li><a>PDF</a></li>
      			<li><a href="https://github.com/toshikurauchi/monografia">LaTeX e imagens</a></li>
      		</ul>
+     		<ul id="apresentacao_detalhes">
+     			<li><a>PPT</a></li>
+     			<li><a>PDF</a></li>
+     			<li><a>V&iacute;deo</a></li>
+     		</ul>
 	    	<ul id="videos_detalhes">
       			<li><a>Gramado</a></li>
       			<li><a>Cérebro</a></li>
-      			<li><a>Apresentação</a></li>
       		</ul>
 	    	<ul id="proposta_detalhes">
 	            <li><a href="#resumo">Resumo da monografia</a></li>
@@ -201,10 +206,7 @@ Js ulich, NIC Series, Vol. 1, ISBN 3-00-005618-1, p. 561-562. 2000.
     submenus[0] = $("#proposta_detalhes");
     submenus[1] = $("#monografia_detalhes");
     submenus[2] = $("#videos_detalhes");
-    
-    submenus.forEach(function(e) {
-    	e.hide();
-    });
+    submenus[3] = $("#apresentacao_detalhes");
     
     function hideOthers(e) {
     	if(e.is(":hidden")) {
@@ -217,21 +219,13 @@ Js ulich, NIC Series, Vol. 1, ISBN 3-00-005618-1, p. 561-562. 2000.
         });
     }
     
-    $("#proposta").click(function() {
-    	var e = $("#proposta_detalhes");
-    	e.toggle();
-    	hideOthers(e);
-	});
-    $("#monografia").click(function() {
-    	var e = $("#monografia_detalhes");
-    	e.toggle();
-    	hideOthers(e);
-	});
-    $("#videos").click(function() {
-		var e = $("#videos_detalhes");
-		e.toggle();
-		hideOthers(e);
-	});
+    submenus.forEach(function(e) {
+    	e.hide();
+    	$("#" + e.attr("id").replace("_detalhes","")).click(function() {
+    		e.toggle();
+        	hideOthers(e);
+    	});
+    });
     </script>
     </body>
 </html>
