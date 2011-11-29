@@ -75,7 +75,7 @@ a:hover {
 
 #logo {
 	width: 1000px;
-	height: 230px;
+	height: 110px;
 	margin: 0px auto;
 	padding: 0;
 	color: #79350A;
@@ -169,6 +169,10 @@ a:hover {
 	line-height: normal;
 }
 
+#menu li ul {
+	padding: 0px;
+}
+
 #menu li {
 	padding: 15px 0px;
 	background: url(images/img10.jpg) repeat-x left bottom;
@@ -186,11 +190,34 @@ a:hover {
 	color: #BD778E;
 }
 
+#menu li ul li {
+    padding-left: 30px;
+}
+#menu li ul li a {
+    color: #996072;
+}
+
 #menu a:hover, #menu .current_page_item a {
 	text-decoration: none;
 }
 
 #menu .current_page_item a {
+}
+
+/* Submenu */
+
+#submenu {
+	width: 260px;
+	float: left;
+	padding-top: 70px;
+}
+
+#submenu a {
+	color: #405900;
+}
+
+#submenu table td {
+	padding-bottom: 10px;
 }
 
 /* Page */

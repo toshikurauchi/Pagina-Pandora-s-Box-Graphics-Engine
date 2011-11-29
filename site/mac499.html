@@ -5,32 +5,53 @@
         <title>Pandora's Box Graphics Engine</title>
     </head>
     <body>
+    <script src="script/jquery-1.7.1.min.js"></script>
     <div id="wrapper">
         <div id="logo">
-	        <h1><a name="topo">Pandora's Box Graphics Engine: Uma Engine Gr&aacute;fica com Aplica&ccedil;&atilde;o em Visualiza&ccedil;&atilde;o de Campos Tensoriais </a></h1>
+	        <h1><a name="topo">Pandora's Box Graphics Engine</a></h1>
+	        <p>Uma Engine Gr&aacute;fica com Aplica&ccedil;&atilde;o em Visualiza&ccedil;&atilde;o de Campos Tensoriais</p>
         </div>
         <div id="header">
 	        <div id="menu">
-		        <ul>
-			        <li><a href="#resumo">Resumo da monografia</a></li>
-			        <li><a href="#objetivos">Objetivos do trabalho</a></li>
-			        <li><a href="#atividades">Atividades j&aacute; realizadas</a></li>
-			        <li><a href="#cronograma">Cronograma de Atividades</a></li>
-			        <li><a href="#estrutura">Estrutura esperada da monografia</a></li>
-                    <li><a href="#bibliografia">Bibliografia</a></li>
-		        </ul>
+                <ul>
+                	<li><a style="cursor:pointer" id="monografia">Monografia</a></li>
+                	<li><a>Apresenta&ccedil;&atilde;o</a></li>
+                	<li><a href="https://github.com/victorkendy/PandoraBox">C&oacute;digo</a></li>
+                	<li><a style="cursor:pointer" id="videos">V&iacute;deos</a></li>
+                    <li><a style="cursor:pointer" id="proposta">Proposta de monografia</a></li>
+                </ul>
 	        </div>
 	        <div id="gallery"><img src="css/images/diff-tensro_RTRT1.jpg" width="346" height="340" alt="" /><img src="css/images/MRI-DTIBrain-9223.jpg" width="346" height="340" alt="" /></div>
         </div>
         <div id="page">
 	    <div id="page-bgtop">
+	    <div id="submenu">
+		    <ul id="monografia_detalhes">
+     			<li><a>PDF</a></li>
+     			<li><a href="https://github.com/toshikurauchi/monografia">LaTeX e imagens</a></li>
+     		</ul>
+	    	<ul id="videos_detalhes">
+      			<li><a>Gramado</a></li>
+      			<li><a>Cérebro</a></li>
+      			<li><a>Apresentação</a></li>
+      		</ul>
+	    	<ul id="proposta_detalhes">
+	            <li><a href="#resumo">Resumo da monografia</a></li>
+	            <li><a href="#objetivos">Objetivos do trabalho</a></li>
+	            <li><a href="#atividades">Atividades j&aacute; realizadas</a></li>
+	            <li><a href="#cronograma">Cronograma de Atividades</a></li>
+	            <li><a href="#estrutura">Estrutura esperada da monografia</a></li>
+				<li><a href="#bibliografia">Bibliografia</a></li>
+			</ul>
+			<hr/>
+			<table style="font-size: 16px">
+	            <tr><td style="padding-right: 5px">Andrew Toshiaki Nakayama Kurauchi</td><td>5894035</td></tr>
+	            <tr><td>Victor Kendy Harada</td><td style="text-align: center">5893823</td></tr>
+	        </table>
+	        <p style="font-size: 16px; padding-bottom: 20px"><i>Supervisor:</i><br/>&nbsp;&nbsp;&nbsp;&nbsp;Prof. Dr. Marcel Parolin Jackowski</p>	    
+	    </div>
 		<div id="content">
         <h1 class="title" style="padding-bottom: 15px">Proposta de Monografia</h1>
-        <table style="font-size: 16px">
-            <tr><td style="padding-right: 30px">Andrew Toshiaki Nakayama Kurauchi</td><td>5894035</td></tr>
-            <tr><td>Victor Kendy Harada</td><td style="text-align: center">5893823</td></tr>
-        </table>
-        <p style="font-size: 16px; padding-bottom: 20px"><i>Supervisor:</i>&nbsp;&nbsp;Prof. Dr. Marcel Parolin Jackowski</p>
 
         <div class="post">
         <h2 class="title"><a name="resumo">Resumo da monografia</a></h2>
@@ -175,5 +196,42 @@ Js ulich, NIC Series, Vol. 1, ISBN 3-00-005618-1, p. 561-562. 2000.
 	    </div>
     </div>    
     <div id="footer" />
+    <script type="text/javascript">
+    var submenus = new Array();
+    submenus[0] = $("#proposta_detalhes");
+    submenus[1] = $("#monografia_detalhes");
+    submenus[2] = $("#videos_detalhes");
+    
+    submenus.forEach(function(e) {
+    	e.hide();
+    });
+    
+    function hideOthers(e) {
+    	if(e.is(":hidden")) {
+    		return;
+    	}
+    	submenus.forEach(function(submenu) {
+        	if(submenu.attr("id") != e.attr("id")) {
+        		submenu.hide();
+        	}
+        });
+    }
+    
+    $("#proposta").click(function() {
+    	var e = $("#proposta_detalhes");
+    	e.toggle();
+    	hideOthers(e);
+	});
+    $("#monografia").click(function() {
+    	var e = $("#monografia_detalhes");
+    	e.toggle();
+    	hideOthers(e);
+	});
+    $("#videos").click(function() {
+		var e = $("#videos_detalhes");
+		e.toggle();
+		hideOthers(e);
+	});
+    </script>
     </body>
 </html>
