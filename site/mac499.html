@@ -13,31 +13,31 @@
         </div>
         <div id="header">
 	        <div id="menu">
-                <ul id="principal_detalhes">
-                	<li><a style="cursor:pointer" id="monografia">Monografia</a></li>
-                	<li><a style="cursor:pointer" id="apresentacao">Apresenta&ccedil;&atilde;o</a></li>
+                <ul id="principal_detalhes" class="detalhes">
+                	<li><a style="cursor:pointer" id="monografia" class="open_detalhes">Monografia</a></li>
+                	<li><a style="cursor:pointer" id="apresentacao" class="open_detalhes">Apresenta&ccedil;&atilde;o</a></li>
                 	<li><a target="_blank" href="https://github.com/victorkendy/PandoraBox">C&oacute;digo</a></li>
-                	<li><a style="cursor:pointer" id="videos">V&iacute;deos</a></li>
-                    <li><a style="cursor:pointer" id="proposta">Proposta de monografia</a></li>
+                	<li><a style="cursor:pointer" id="videos" class="open_detalhes">V&iacute;deos</a></li>
+                    <li><a style="cursor:pointer" id="proposta" class="open_detalhes">Proposta de monografia</a></li>
                     <li><a target="_blank" href="https://github.com/toshikurauchi/Pagina-Pandora-s-Box-Graphics-Engine">Fonte da página</a></li>
                 </ul>
-                <ul id="monografia_detalhes">
+                <ul id="monografia_detalhes" class="detalhes">
 	     			<li><a target="_blank" href="monografia.pdf">PDF</a></li>
 	     			<li><a target="_blank" href="subjetiva-andrew.pdf">Parte subjetiva - Andrew Kurauchi</a></li>
 	     			<li><a target="_blank" href="subjetiva-victor.pdf">Parte subjetiva - Victor Harada</a></li>
 	     			<li><a target="_blank" href="https://github.com/toshikurauchi/monografia">LaTeX e imagens</a></li>
 	     		</ul>
-	     		<ul id="apresentacao_detalhes">
+	     		<ul id="apresentacao_detalhes" class="detalhes">
 	     			<li><a target="_blank" href="Apresentacao_TCC_Andrew_e_Victor.ppt">PPT</a></li>
 	     			<li><a target="_blank" href="Apresentacao_TCC_Andrew_e_Victor.pdf">PDF</a></li>
 	     			<li><a target="_blank" href="http://www.youtube.com/watch?v=615IUeniEuM">V&iacute;deo <i>parte 1</i></a></li>
 	     			<li><a target="_blank" href="http://www.youtube.com/watch?v=Jo_-7ZBKuKo">V&iacute;deo <i>parte 2</i></a></li>
 	     		</ul>
-		    	<ul id="videos_detalhes">
+		    	<ul id="videos_detalhes" class="detalhes">
 	      			<li><a target="_blank" href="http://www.youtube.com/watch?v=Gfe0qLKomhs">Gramado</a></li>
 	      			<li><a target="_blank" href="http://www.youtube.com/watch?v=iAu7AdaGuuk">C&eacute;rebro</a></li>
 	      		</ul>
-		    	<ul id="proposta_detalhes">
+		    	<ul id="proposta_detalhes" class="detalhes">
 		            <li><a href="#resumo">Resumo da monografia</a></li>
 		            <li><a href="#objetivos">Objetivos do trabalho</a></li>
 		            <li><a href="#atividades">Atividades j&aacute; realizadas</a></li>
@@ -207,38 +207,17 @@ Js ulich, NIC Series, Vol. 1, ISBN 3-00-005618-1, p. 561-562. 2000.
     </div>    
     <div id="footer" />
     <script type="text/javascript">
-    var submenus = new Array();
-    submenus[0] = $("#proposta_detalhes");
-    submenus[1] = $("#monografia_detalhes");
-    submenus[2] = $("#videos_detalhes");
-    submenus[3] = $("#apresentacao_detalhes");
-    submenus[4] = $("#principal_detalhes");
-    
-    function hideOthers(e) {
-    	if(e.is(":hidden")) {
-    		return;
-    	}
-    	if(e.attr("id") == "principal_detalhes") {
-    		$("#principal").hide();
-    		$("#author").css("padding-top", "40px")
-    	}
-    	else {
-    		$("#principal").show();
-    		$("#author").css("padding-top", "5px")
-    	}
-    	submenus.forEach(function(submenu) {
-        	if(submenu.attr("id") != e.attr("id")) {
-        		submenu.hide();
-        	}
-        });
-    }
-    
-    submenus.forEach(function(e) {
-    	e.hide();
-    	$("#" + e.attr("id").replace("_detalhes","")).click(function() {
-    		e.show();
-        	hideOthers(e);
-    	});
+    $(".open_detalhes").click(function() {
+        $(".detalhes").hide();
+        $("#" + $(this).attr("id") + "_detalhes").show();
+        $("#principal").show();
+        $("#author").css("padding-top", "5px")
+    });
+    $("#principal").click(function() {
+        $(".detalhes").hide();
+        $("#principal_detalhes").show();
+        $("#principal").hide();
+        $("#author").css("padding-top", "40px");
     });
     
     $("#principal_detalhes").show();
