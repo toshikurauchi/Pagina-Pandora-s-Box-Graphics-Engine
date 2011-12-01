@@ -204,23 +204,6 @@ a:hover {
 #menu .current_page_item a {
 }
 
-/* Submenu */
-
-#submenu {
-	width: 260px;
-	float: left;
-	padding-top: 70px;
-	style: "font-size: 16px";
-}
-
-#submenu a {
-	color: #405900;
-}
-
-#submenu table td {
-	padding-bottom: 10px;
-}
-
 /* Page */
 
 #page {
@@ -338,7 +321,7 @@ a:hover {
 #sidebar li li a {
 	padding-left: 20px;
 	background: url(images/img11.jpg) no-repeat left 6px;
-	color: #3E3B36;
+	color: #445e00;
 }
 
 #sidebar li li a:hover {
@@ -362,6 +345,22 @@ a:hover {
 }
 
 #sidebar a:hover {
+}
+
+/* Author */
+
+#author {
+	width: 260px;
+	padding-top: 40px;
+	style: "font-size: 16px";
+}
+
+#author a {
+	color: #405900;
+}
+
+#author table td {
+	padding-bottom: 10px;
 }
 
 /* Calendar */

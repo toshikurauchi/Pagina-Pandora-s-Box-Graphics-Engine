@@ -13,7 +13,7 @@
         </div>
         <div id="header">
 	        <div id="menu">
-                <ul>
+                <ul id="principal_detalhes">
                 	<li><a style="cursor:pointer" id="monografia">Monografia</a></li>
                 	<li><a style="cursor:pointer" id="apresentacao">Apresenta&ccedil;&atilde;o</a></li>
                 	<li><a href="https://github.com/victorkendy/PandoraBox">C&oacute;digo</a></li>
@@ -21,40 +21,44 @@
                     <li><a style="cursor:pointer" id="proposta">Proposta de monografia</a></li>
                     <li><a href="https://github.com/toshikurauchi/Pagina-Pandora-s-Box-Graphics-Engine">Fonte da página</a></li>
                 </ul>
+                <ul id="monografia_detalhes">
+	     			<li><a href="monografia.pdf">PDF</a></li>
+	     			<li><a href="subjetiva-andrew.pdf">Parte subjetiva - Andrew Kurauchi</a></li>
+	     			<li><a href="subjetiva-victor.pdf">Parte subjetiva - Victor Harada</a></li>
+	     			<li><a href="https://github.com/toshikurauchi/monografia">LaTeX e imagens</a></li>
+	     		</ul>
+	     		<ul id="apresentacao_detalhes">
+	     			<li><a href="Apresentacao_TCC_Andrew_e_Victor.ppt">PPT</a></li>
+	     			<li><a href="Apresentacao_TCC_Andrew_e_Victor.pdf">PDF</a></li>
+	     			<li><a href="http://www.youtube.com/watch?v=615IUeniEuM">V&iacute;deo <i>parte 1</i></a></li>
+	     			<li><a href="http://www.youtube.com/watch?v=Jo_-7ZBKuKo">V&iacute;deo <i>parte 2</i></a></li>
+	     		</ul>
+		    	<ul id="videos_detalhes">
+	      			<li><a href="http://www.youtube.com/watch?v=Gfe0qLKomhs">Gramado</a></li>
+	      			<li><a href="http://www.youtube.com/watch?v=iAu7AdaGuuk">C&eacute;rebro</a></li>
+	      		</ul>
+		    	<ul id="proposta_detalhes">
+		            <li><a href="#resumo">Resumo da monografia</a></li>
+		            <li><a href="#objetivos">Objetivos do trabalho</a></li>
+		            <li><a href="#atividades">Atividades j&aacute; realizadas</a></li>
+		            <li><a href="#cronograma">Cronograma de Atividades</a></li>
+		            <li><a href="#estrutura">Estrutura esperada da monografia</a></li>
+					<li><a href="#bibliografia">Bibliografia</a></li>
+				</ul>
 	        </div>
 	        <div id="gallery"><img src="css/images/diff-tensro_RTRT1.jpg" width="346" height="340" alt="" /><img src="css/images/MRI-DTIBrain-9223.jpg" width="346" height="340" alt="" /></div>
         </div>
         <div id="page">
 	    <div id="page-bgtop">
-	    <div id="submenu">
-		    <ul id="monografia_detalhes">
-     			<li><a>PDF</a></li>
-     			<li><a href="https://github.com/toshikurauchi/monografia">LaTeX e imagens</a></li>
-     		</ul>
-     		<ul id="apresentacao_detalhes">
-     			<li><a href="Apresentacao_TCC_Andrew_e_Victor.ppt">PPT</a></li>
-     			<li><a href="Apresentacao_TCC_Andrew_e_Victor.pdf">PDF</a></li>
-     			<li><a href="http://www.youtube.com/watch?v=615IUeniEuM">V&iacute;deo <i>parte 1</i></a></li>
-     			<li><a href="http://www.youtube.com/watch?v=Jo_-7ZBKuKo">V&iacute;deo <i>parte 2</i></a></li>
-     		</ul>
-	    	<ul id="videos_detalhes">
-      			<li><a href="http://www.youtube.com/watch?v=Gfe0qLKomhs">Gramado</a></li>
-      			<li><a href="http://www.youtube.com/watch?v=iAu7AdaGuuk">C&eacute;rebro</a></li>
-      		</ul>
-	    	<ul id="proposta_detalhes">
-	            <li><a href="#resumo">Resumo da monografia</a></li>
-	            <li><a href="#objetivos">Objetivos do trabalho</a></li>
-	            <li><a href="#atividades">Atividades j&aacute; realizadas</a></li>
-	            <li><a href="#cronograma">Cronograma de Atividades</a></li>
-	            <li><a href="#estrutura">Estrutura esperada da monografia</a></li>
-				<li><a href="#bibliografia">Bibliografia</a></li>
-			</ul>
-			<hr/>
-			<table>
-	            <tr><td style="padding-right: 5px">Andrew Toshiaki Nakayama Kurauchi</td><td>5894035</td></tr>
-	            <tr><td>Victor Kendy Harada</td><td style="text-align: center">5893823</td></tr>
-	        </table>
-	        <p><i>Supervisor:</i><br/>&nbsp;&nbsp;&nbsp;&nbsp;Prof. Dr. Marcel Parolin Jackowski</p>	    
+	    <div id="sidebar">
+	    	<ul><li><ul><li><a style="cursor:pointer" id="principal">Voltar para o menu principal</a></li></ul></li></ul>
+	    	<div id="author">
+				<table>
+		            <tr><td style="padding-right: 5px">Andrew Toshiaki Nakayama Kurauchi</td><td>5894035</td></tr>
+		            <tr><td>Victor Kendy Harada</td><td style="text-align: center">5893823</td></tr>
+		        </table>
+		        <p><i>Supervisor:</i><br/>&nbsp;&nbsp;&nbsp;&nbsp;Prof. Dr. Marcel Parolin Jackowski</p>	    
+		    </div>
 	    </div>
 		<div id="content">
         <h1 class="title" style="padding-bottom: 15px">Proposta de Monografia</h1>
@@ -208,10 +212,19 @@ Js ulich, NIC Series, Vol. 1, ISBN 3-00-005618-1, p. 561-562. 2000.
     submenus[1] = $("#monografia_detalhes");
     submenus[2] = $("#videos_detalhes");
     submenus[3] = $("#apresentacao_detalhes");
+    submenus[4] = $("#principal_detalhes");
     
     function hideOthers(e) {
     	if(e.is(":hidden")) {
     		return;
+    	}
+    	if(e.attr("id") == "principal_detalhes") {
+    		$("#principal").hide();
+    		$("#author").css("padding-top", "40px")
+    	}
+    	else {
+    		$("#principal").show();
+    		$("#author").css("padding-top", "5px")
     	}
     	submenus.forEach(function(submenu) {
         	if(submenu.attr("id") != e.attr("id")) {
@@ -223,10 +236,13 @@ Js ulich, NIC Series, Vol. 1, ISBN 3-00-005618-1, p. 561-562. 2000.
     submenus.forEach(function(e) {
     	e.hide();
     	$("#" + e.attr("id").replace("_detalhes","")).click(function() {
-    		e.toggle();
+    		e.show();
         	hideOthers(e);
     	});
     });
+    
+    $("#principal_detalhes").show();
+    $("#principal").hide();
     </script>
     </body>
 </html>
